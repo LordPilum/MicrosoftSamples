@@ -1,0 +1,22 @@
+﻿@model IEnumerable<StorageAspNetTables.Models.CustomerEntity>
+@{
+    ViewBag.Title = "GetPartition";
+}
+
+<h2>Get Partition results</h2>
+
+<table border="1">
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+    </tr>
+    @foreach (var customer in Model)
+    {
+        <tr>
+            <td>@(customer.RowKey)</td>
+            <td>@(customer.PartitionKey)</td>
+            <td>@(customer.Email)</td>
+        </tr>
+    }
+</table>

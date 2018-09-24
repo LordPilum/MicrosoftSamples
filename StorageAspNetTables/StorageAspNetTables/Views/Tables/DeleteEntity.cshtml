@@ -1,0 +1,19 @@
+﻿@model Microsoft.WindowsAzure.Storage.Table.TableResult
+@{
+    ViewBag.Title = "DeleteEntity";
+}
+
+<h2>Delete Entity results</h2>
+
+<table border="1">
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>HTTP result</th>
+    </tr>
+    <tr>
+        <td>@((Model.Result as StorageAspNetTables.Models.CustomerEntity).RowKey)</td>
+        <td>@((Model.Result as StorageAspNetTables.Models.CustomerEntity).PartitionKey)</td>
+        <td>@Model.HttpStatusCode</td>
+    </tr>
+</table>
