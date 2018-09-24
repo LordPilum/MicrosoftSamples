@@ -30,7 +30,7 @@ namespace StorageAspNet.Controllers
         {
             CloudBlobContainer container = GetCloudBlobContainer();
             CloudBlockBlob blob = container.GetBlockBlobReference("myBlob");
-            using (var fileStream = System.IO.File.OpenRead(@"c:\src\sample.txt"))
+            using (var fileStream = System.IO.File.OpenRead(@"c:\e\sample.txt"))
             {
                 blob.UploadFromStream(fileStream);
             }
@@ -67,7 +67,7 @@ namespace StorageAspNet.Controllers
         {
             CloudBlobContainer container = GetCloudBlobContainer();
             CloudBlockBlob blob = container.GetBlockBlobReference("myBlob");
-            using (var fileStream = System.IO.File.OpenWrite(@"c:\src\downloadedBlob.txt"))
+            using (var fileStream = System.IO.File.OpenWrite(@"c:\e\downloadedBlob.txt"))
             {
                 blob.DownloadToStream(fileStream);
             }
